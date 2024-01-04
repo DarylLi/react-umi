@@ -6,7 +6,7 @@ export default defineConfig({
     // { path: "/docs", component: "./docs" },
   ],
   history: { type: 'hash' },
-  publicPath:'./',
+  publicPath:'',
   base:'/',
   npmClient: 'yarn',
 });
