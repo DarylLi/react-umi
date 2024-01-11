@@ -6,10 +6,12 @@
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
+    "webpack": "umi webpack",
     "start": "npm run dev"
   },
   "dependencies": {
-    "umi": "^4.1.0"
+    "umi": "^4.1.0",
+    "webpack-chain": "^6.5.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",
