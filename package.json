@@ -10,6 +10,8 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "loadjs": "^4.3.0-rc1",
+    "pixi.js": "^7.3.3",
     "umi": "^4.1.0",
     "webpack-chain": "^6.5.1"
   },

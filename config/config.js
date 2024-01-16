@@ -1,6 +1,5 @@
 import { defineConfig } from "umi";
 const path = require('path')
-
 export default defineConfig({
   routes: [
     { path: "/", component: "@/pages/index" },
@@ -14,6 +13,7 @@ export default defineConfig({
   theme: {
     "@primary-color": "#1DA57A"
   },
+  scripts:['https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js'],
   favicons: ['favicon.ico'],
   chainWebpack(config, { webpack }) {
     // 设置 alias

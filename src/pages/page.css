@@ -1,0 +1,80 @@
+html{
+	background: #ffeaf4;
+	-webkit-user-select: none;
+	-moz-user-select: none;    
+	-khtml-user-select: none;  
+	-ms-user-select: none;    
+	  /* 以下两个属性目前并未支持，写在这里为了减少风险 */
+	  -o-user-select: none;
+	  user-select: none; 
+	 padding: 0px;
+	 width: auto;
+}
+body{
+	margin: 0px;
+	
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.mika-banner-content{
+	width:100%;
+	display: flex;
+	height: 298px;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	background: #d6e0f9;
+    padding: 0px;
+    width: auto;
+}
+.mika-banner-header{
+    position: absolute;
+    top: 69px;
+    width: 160px;
+    height: 160px;
+    left: 20px;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+}
+.mika-banner-header-content{
+	position: absolute;
+	top: 140px;
+	left: 200px;
+	background: #ffeaf4;
+	padding: 0 20px;
+	line-height: 32px;
+}
+.mika-banner-header img{
+    width: 225px !important;
+    position: absolute;
+    left: -22px;
+}
+.mika-banner-content img{
+	border-radius: 20px;
+}
+#mika-playground{
+	background: #d6e0f9;
+	padding: 20px;
+	padding-top: 60px;
+}
+#mika-playground canvas{
+	width: 100%!important;
+	height: 100%!important;
+	border-radius: 20px;
+	box-shadow: rgb(255, 234, 244) 0px -1px 42px 20px;
+}
+.mika-header-list-img-frame{
+	position: absolute;
+	right: 20px;
+	top: 59px; 
+	transform: rotateY(180deg);
+
+}
+.mika-header-list-img-frame img{
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+}
