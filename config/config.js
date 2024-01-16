@@ -14,6 +14,7 @@ export default defineConfig({
   theme: {
     "@primary-color": "#1DA57A"
   },
+  favicons: ['favicon.ico'],
   chainWebpack(config, { webpack }) {
     // 设置 alias
     config.resolve.alias.set('a', 'path/to/a');
