@@ -1,5 +1,5 @@
 html{
-	background: #ffeaf4;
+	background: #fff;
 	-webkit-user-select: none;
 	-moz-user-select: none;    
 	-khtml-user-select: none;  
@@ -9,14 +9,24 @@ html{
 	  user-select: none; 
 	 padding: 0px;
 	 width: auto;
+	 height: 100%;
+	 cursor:none;
 }
+
 body{
 	margin: 0px;
-	
+	height: 100%;
+	overflow: hidden;
 }
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+.mika-top{
+	position: absolute;
+	top: 0px;
+	width:100%;
+	height: 298px;
 }
 .mika-banner-content{
 	width:100%;
@@ -25,9 +35,9 @@ body::-webkit-scrollbar {
 	justify-content: flex-start;
 	flex-direction: column;
 	align-items: center;
-	background: #d6e0f9;
     padding: 0px;
-    width: auto;
+	background: url(http://all.franxxdaryl.site/dist/assets/bannernew.jpg);
+	background-size: contain;
 }
 .mika-banner-header{
     position: absolute;
@@ -41,12 +51,39 @@ body::-webkit-scrollbar {
 }
 .mika-banner-header-content{
 	position: absolute;
-	top: 140px;
-	left: 200px;
-	background: #ffeaf4;
+	top: 84px;
+	left: 185px;
+	background: #fbe2f0;
 	padding: 0 20px;
 	line-height: 32px;
 }
+.mika-banner-header-content {
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.mika-banner-header-content:hover span{
+	transform: scale(1.2);
+	transition: all .3s;
+	-webkit-background-clip: text;
+}
+
+.mika-banner-header-content::before {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-right: 10px solid #fbe2f0;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
 .mika-banner-header img{
     width: 225px !important;
     position: absolute;
@@ -55,26 +92,382 @@ body::-webkit-scrollbar {
 .mika-banner-content img{
 	border-radius: 20px;
 }
+.mika-play-content{
+	height: calc(100% - 474px);
+	background-size: 753px;
+	background-repeat: repeat;
+	position: absolute;
+	top: 298px;
+	width: 100%;
+}
+.mika-play-content.loading{
+	transform: scaleY(2);
+	transition: all .3s;
+}
+.mika-play-content.revert{
+	opacity: 0;
+	transition: all .3s;
+}
 #mika-playground{
-	background: #d6e0f9;
-	padding: 20px;
-	padding-top: 60px;
+	height: calc(100%);
 }
 #mika-playground canvas{
 	width: 100%!important;
-	height: 100%!important;
 	border-radius: 20px;
 	box-shadow: rgb(255, 234, 244) 0px -1px 42px 20px;
 }
 .mika-header-list-img-frame{
 	position: absolute;
-	right: 20px;
+	left: 20px;
 	top: 59px; 
-	transform: rotateY(180deg);
-
-}
-.mika-header-list-img-frame img{
+	border-radius: 50%;
+	overflow: hidden;
 	width: 180px;
 	height: 180px;
-	border-radius: 50%;
+	background: #d6e0f9;
+}
+.mika-header-list-img-frame img{
+	width: 100%;
+	height: 100%;
+}
+.mika-banner-bottom{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+	color: #5a5784;
+	padding: 20px 0;
+	flex-direction: column;
+	background: #d6e0f9;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+}
+.mika-banner-bottom span{
+	line-height: 24px;
+	font-size: 12px;
+}
+.mika-banner-emaillist{
+	display: flex;
+	justify-content: center;
+}
+.mika-banner-emaillist img{
+	margin-top: 20px;
+	width: 40px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+.mika-banner-email{
+	position: relative;
+	transition: all .3s;
+	margin-right: 10px;
+}
+.mika-banner-email::before{
+	display: none;
+	transition: all .3s;
+	width: 340px;
+	color: #000;
+	height: 40px;
+	position: absolute;
+	/* z-index: 3123123; */
+	top: 18px;
+	left: 47px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 10px;
+	padding-left: 10px;
+	z-index: 123123;
+}
+.mika-banner-email-qq::before{
+	content: "qq email: 616441509@qq.com";
+}
+.mika-banner-email-ol::before{
+	width: 340px;
+	content: "outlook email: lhtisgood@outlook.com";
+}
+.mika-banner-email-163::before{
+	width: 340px;
+	content: "163 email: lhtisgood@163.com";
+}
+
+.mika-banner-email:hover::before{
+	display: block;
+}
+
+.mika-bideo{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 122;
+	cursor:none;
+}
+#mika-bideo-container {
+  overflow: hidden;
+  height: 100%;
+  background: #edeae8;
+  position: relative;
+}
+
+#mika-bideo-container video {
+  position: absolute;
+  /* Vertical and Horizontal center*/
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.mika-banner-video{
+	position: absolute;
+    right: 20px;
+    top: 22px;
+    width: 450px;
+}
+.mika-banner-video video{
+	width: 100%;
+}
+#root{
+	height: 100%;
+}
+.mika-top,
+.mika-banner-bottom{
+	transition: all .5s;
+}
+.mika-top.isHide{
+	transform: translateY(-600px);
+	transition: all .3s;
+}
+.mika-banner-bottom.isHide{
+	transform: translateY(600px);
+	transition: all .3s;
+}
+#mika-playground.isFullPage{
+	transition: all .5s;
+	position: fixed;
+	width: calc(100%);
+	height: calc(100%);
+	top: 0px;
+	left: 0px;
+}
+.mika-loading{
+    position: fixed;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.mika-loading img{
+	position: absolute;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear ;
+	z-index:2;
+}
+.mika-loading{
+	
+}
+
+.mika-loading-bg{
+	position: absolute;
+	width: 600px;
+	height: 500px;
+	background: #ffe3f1;
+	z-index:1;
+	-webkit-animation-name: zoomInBg;
+	animation-name: zoomInBg;
+	animation-duration: .7s;
+	animation-iteration-count: infinite;
+	border-radius: 20px;
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale3d(0,0,0);
+    }
+	100% {
+		transform: scale3d(2.4,2.4,2.4);
+	}
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale3d(0,0,0);
+    }
+	100% {
+		transform: scale3d(2.4,2.4,2.4);
+	}
+}
+@keyframes zoomInBg {
+    0% {
+        opacity:0;
+    }
+	70% {
+        opacity:0;
+    }
+	100% {
+		opacity:0.9;
+		transform: scale3d(2.4,2.4,2.4);
+	}
+}
+@keyframes zoomInBg {
+    0% {
+        opacity:0;
+    }
+    70% {
+        opacity:0;
+    }
+	100% {
+		opacity:0.9;
+		transform: scale3d(2.4,2.4,2.4);
+	}
+}
+
+
+#cursor {
+	z-index: 10000;
+    position: absolute;
+    left: -20px;
+    top: -4px;
+    will-change: transform;
+    -webkit-transform: translate(-999px, -999px);
+    transform: translate(-999px, -999px);
+    pointer-events: none;
+}
+#cursor img {
+    will-change: transform;
+    -webkit-transition: -webkit-transform .1s linear;
+    transition: -webkit-transform .1s linear;
+    transition: transform .1s linear;
+    transition: transform .1s linear, -webkit-transform .1s linear;
+}
+@-webkit-keyframes color-blink {
+    0% {
+        color: #eb3424;
+    }
+    14% {
+        color: #f2a03a;
+    }
+    28% {
+        color: #f8fd53;
+    }
+    42% {
+        color: #7bec4b;
+    }
+    56% {
+        color: #74fbe4;
+    }
+    70% {
+        color: #0035f5;
+    }
+    84% {
+        color: #b337f6;
+    }
+    100% {
+        color: #b337f6;
+    }
+}
+@keyframes color-blink {
+    0% {
+        color: #eb3424;
+    }
+    14% {
+        color: #f2a03a;
+    }
+    28% {
+        color: #f8fd53;
+    }
+    42% {
+        color: #7bec4b;
+    }
+    56% {
+        color: #74fbe4;
+    }
+    70% {
+        color: #0035f5;
+    }
+    84% {
+        color: #b337f6;
+    }
+    100% {
+        color: #b337f6;
+    }
+}
+
+.mika-animate-content{
+	background: #29202063;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	z-index: 1231;
+}
+
+.mika-animate-list-title{
+	display: flex;
+    width: 360px;
+    padding: 20px;
+    margin: auto;
+    height: 22px;
+    background: #fff;
+    justify-content: space-between;
+}
+.mika-animate-list-title div{
+    flex: 1;
+    color: #dedede;
+    text-align: center;
+}
+.mika-animate-list-title div.active{
+	color: #f64eac;
+}
+.mika-animate-list{
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 600px;
+    width: 60%;
+	background: #fff;
+	border-radius: 20px;
+}
+.mika-animate-list-animate-content{
+	height: 523px;
+	overflow: auto;
+}
+.mika-animate-list-animate-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.mika-animate-list-animate-content-card{
+	box-sizing: border-box;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 10px;
+	border-bottom: 1px solid #fbe2f0;
+	width: 98%;
+	margin: auto;
+}
+.mika-animate-list-animate-content-card .img{
+    height: 100%;
+    margin-right: 40px;
+    width: 42px;
+    background: url(http://all.franxxdaryl.site/dist/mika_mie.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.mika-animate-list-animate-content-card .img img{
+	height: 100%;
+}
+.mika-animate-list-animate-content-card .info{
+	display: flex;
+	flex-direction: column;
+}
+
+.mika-animate-list-animate-content-card .info span{
+	margin: 5px 0;
 }

@@ -4,20 +4,34 @@
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
+    "dll": "webpack --config ./config/dll.js",
+    "analyze": "cross-env ANALYZE=1 umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
     "webpack": "umi webpack",
     "start": "npm run dev"
   },
   "dependencies": {
+    "animejs": "^3.2.2",
+    "axios": "^1.6.5",
+    "cross-env": "^7.0.3",
+    "daryl-rollup-demo": "^1.0.2",
+    "html-webpack-plugin": "^5.6.0",
     "loadjs": "^4.3.0-rc1",
     "pixi.js": "^7.3.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "umi": "^4.1.0",
+    "vue": "3.2.8",
     "webpack-chain": "^6.5.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "typescript": "^5.0.3"
+    "add-asset-html-webpack-plugin": "^6.0.0",
+    "mika-pack-plugin": "^1.0.3",
+    "typescript": "^5.0.3",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^4.3.0",
+    "webpack-merge": "^4.2.2"
   }
 }
